@@ -1,0 +1,954 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      data-mgx-overview="icon"
+      rel="icon"
+      href="https://public-frontend-1300249583.cos.ap-nanjing.myqcloud.com/commonfile/DefaultAppLogo.png"
+    />
+    <title data-mgx-overview="title">Sulestono Farm</title>
+    <meta
+      data-mgx-overview="description"
+      name="description"
+      content="Telur ayam kampung asli, segar setiap hari dari Sulestono Farm. Pesan mudah via WhatsApp."
+    />
+    <meta
+      data-mgx-overview="og:title"
+      property="og:title"
+      content="Sulestono Farm"
+    />
+    <meta
+      data-mgx-overview="og:description"
+      property="og:description"
+      content="Telur ayam kampung asli, segar setiap hari dari Sulestono Farm. Pesan mudah via WhatsApp."
+    />
+    <meta
+      data-mgx-overview="og:image"
+      property="og:image"
+      content="https://public-frontend-1300249583.cos.ap-nanjing.myqcloud.com/commonfile/DefaultAppLogo.png"
+    />
+    <meta
+      data-mgx-overview="twitter:title"
+      name="twitter:title"
+      content="Sulestono Farm"
+    />
+    <meta
+      data-mgx-overview="twitter:description"
+      name="twitter:description"
+      content="Telur ayam kampung asli, segar setiap hari dari Sulestono Farm. Pesan mudah via WhatsApp."
+    />
+    <meta
+      data-mgx-overview="twitter:image"
+      name="twitter:image"
+      content="https://public-frontend-1300249583.cos.ap-nanjing.myqcloud.com/commonfile/DefaultAppLogo.png"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5 CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ===== CUSTOM NEOBRUTALISM DI ATAS BOOTSTRAP ===== */
+      :root {
+        --color-primary: #ffd93d;
+        --color-secondary: #ff6b35;
+        --color-accent: #6bcb77;
+        --color-bg: #fffbeb;
+        --color-card: #ffffff;
+        --color-dark: #1a1a1a;
+        --color-border: #1a1a1a;
+        --color-featured: #fff3cd;
+        --color-badge-laris: #ff6b35;
+        --color-badge-hemat: #6bcb77;
+        --border-width: 3px;
+        --shadow-offset: 5px;
+        --shadow: var(--shadow-offset) var(--shadow-offset) 0px
+          var(--color-dark);
+        --shadow-small: 3px 3px 0px var(--color-dark);
+        --radius: 4px;
+        --font-main: "Space Grotesk", sans-serif;
+        --nav-height: 72px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-main);
+        background-color: var(--color-bg);
+        color: var(--color-dark);
+        padding-top: var(--nav-height);
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-weight: 700;
+      }
+
+      /* Supaya section tidak ketutup navbar fixed saat discroll via anchor */
+      section[id],
+      header[id] {
+        scroll-margin-top: var(--nav-height);
+      }
+
+      /* ===== NAVBAR NEOBRUTALISM ===== */
+      #navbar-neo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1030;
+        height: var(--nav-height);
+        background-color: var(--color-card);
+        border-bottom: var(--border-width) solid var(--color-border);
+      }
+
+      #navbar-neo .navbar-brand-neo {
+        font-weight: 700;
+        font-size: 1.25rem;
+        color: var(--color-dark);
+        text-decoration: none;
+      }
+
+      #navbar-neo .nav-link-neo {
+        font-weight: 700;
+        color: var(--color-dark);
+        text-decoration: none;
+        padding: 0.5rem 0.9rem;
+        border: var(--border-width) solid transparent;
+        border-radius: var(--radius);
+        transition:
+          background-color 0.15s ease,
+          border-color 0.15s ease,
+          transform 0.1s ease;
+      }
+
+      #navbar-neo .nav-link-neo:hover {
+        background-color: var(--color-primary);
+        border-color: var(--color-border);
+        transform: translate(-1px, -1px);
+      }
+
+      #navbar-neo .btn-nav-cta {
+        background-color: var(--color-accent);
+        color: var(--color-dark);
+        font-weight: 700;
+        border: var(--border-width) solid var(--color-border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-small);
+        padding: 0.5rem 1.1rem;
+        text-decoration: none;
+        white-space: nowrap;
+        transition:
+          transform 0.1s ease,
+          box-shadow 0.1s ease;
+      }
+
+      #navbar-neo .btn-nav-cta:hover {
+        transform: translate(2px, 2px);
+        box-shadow: 1px 1px 0px var(--color-dark);
+      }
+
+      #navbar-neo .navbar-toggler-neo {
+        border: var(--border-width) solid var(--color-border);
+        border-radius: var(--radius);
+        background-color: var(--color-card);
+        box-shadow: var(--shadow-small);
+        padding: 0.35rem 0.6rem;
+      }
+
+      #navbar-neo .navbar-toggler-neo:focus {
+        box-shadow: var(--shadow-small);
+        outline: none;
+      }
+
+      #mobileMenuNeo {
+        background-color: var(--color-card);
+        border-bottom: var(--border-width) solid var(--color-border);
+      }
+
+      #mobileMenuNeo .nav-link-neo {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      /* ===== TOMBOL NEOBRUTALISM ===== */
+      .btn-neo {
+        font-family: var(--font-main);
+        font-weight: 700;
+        border: var(--border-width) solid var(--color-border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        transition:
+          transform 0.1s ease,
+          box-shadow 0.1s ease;
+      }
+
+      .btn-neo:hover {
+        transform: translate(2px, 2px);
+        box-shadow: 3px 3px 0px var(--color-dark);
+      }
+
+      .btn-neo:active {
+        transform: translate(4px, 4px);
+        box-shadow: 1px 1px 0px var(--color-dark);
+      }
+
+      .btn-neo-primary {
+        background-color: var(--color-primary);
+        color: var(--color-dark);
+      }
+
+      .btn-neo-secondary {
+        background-color: var(--color-card);
+        color: var(--color-dark);
+      }
+
+      /* ===== CARD NEOBRUTALISM ===== */
+      .card-neo {
+        background-color: var(--color-card);
+        border: var(--border-width) solid var(--color-border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .card-neo:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 7px 7px 0px var(--color-dark);
+      }
+
+      /* ===== HEADER / HERO ===== */
+      #hero {
+        background-color: var(--color-primary);
+        border-bottom: var(--border-width) solid var(--color-border);
+      }
+
+      .hero-badge {
+        display: inline-block;
+        background-color: var(--color-card);
+        border: var(--border-width) solid var(--color-border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-small);
+      }
+
+      .hero-stats {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .hero-stat-item {
+        background-color: var(--color-card);
+        border: var(--border-width) solid var(--color-border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-small);
+        padding: 0.75rem 1.25rem;
+        min-width: 150px;
+      }
+
+      .hero-stat-item .stat-number {
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .hero-stat-item .stat-label {
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+
+      /* ===== SECTION DAFTAR HARGA ===== */
+      #daftar-harga {
+        background-color: #fff8e1;
+        border-top: var(--border-width) solid var(--color-border);
+        border-bottom: var(--border-width) solid var(--color-border);
+      }
+
+      .pricing-card-featured {
+        background-color: var(--color-featured) !important;
+        border-width: 4px !important;
+        transform: scale(1.03);
+      }
+
+      .pricing-card-featured:hover {
+        transform: scale(1.03) translate(-2px, -2px);
+      }
+
+      .badge-neo {
+        font-size: 0.75rem;
+        font-weight: 700;
+        border: var(--border-width) solid var(--color-border);
+        border-radius: var(--radius);
+      }
+
+      .badge-laris {
+        background-color: var(--color-badge-laris);
+        color: #fff;
+      }
+
+      .badge-hemat {
+        background-color: var(--color-badge-hemat);
+        color: var(--color-dark);
+      }
+
+      .per-butir-card {
+        background-color: var(--color-card);
+        border: var(--border-width) solid var(--color-border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-small);
+      }
+
+      .ongkir-note {
+        background-color: var(--color-accent);
+        border: var(--border-width) solid var(--color-border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-small);
+      }
+
+      /* ===== GALERI ===== */
+      .gallery-placeholder {
+        background-color: #f5f5f5;
+        min-height: 220px;
+      }
+
+      .gallery-img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* ===== FORM ===== */
+      #form-pesanan {
+        background-color: #fff8e1;
+        border-top: var(--border-width) solid var(--color-border);
+      }
+
+      .form-control-neo {
+        border: var(--border-width) solid var(--color-border) !important;
+        border-radius: var(--radius) !important;
+        box-shadow: var(--shadow-small);
+        font-family: var(--font-main);
+        transition:
+          box-shadow 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .form-control-neo:focus {
+        box-shadow: var(--shadow) !important;
+        transform: translate(-1px, -1px);
+        border-color: var(--color-border) !important;
+      }
+
+      .catatan-box {
+        background-color: var(--color-primary);
+        border: var(--border-width) solid var(--color-border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-small);
+      }
+
+      /* ===== FOOTER ===== */
+      #footer {
+        background-color: var(--color-dark);
+        border-top: var(--border-width) solid var(--color-border);
+      }
+
+      /* ===== RESPONSIVE TWEAKS ===== */
+      @media (max-width: 768px) {
+        :root {
+          --nav-height: 64px;
+        }
+
+        #hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .pricing-card-featured {
+          transform: scale(1);
+        }
+
+        .pricing-card-featured:hover {
+          transform: translate(-2px, -2px);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ============================================================
+         NAVBAR
+         Fixed di atas, sesuai tema neobrutalism (border tebal + shadow)
+         ============================================================ -->
+    <nav id="navbar-neo">
+      <div
+        class="container h-100 d-flex align-items-center justify-content-between"
+      >
+        <a href="#hero" class="navbar-brand-neo">🥚 SHINDO FARM 77</a>
+
+        <!-- Menu desktop -->
+        <div class="d-none d-lg-flex align-items-center gap-2">
+          <a href="#hero" class="nav-link-neo">Beranda</a>
+          <a href="#kenapa-kami" class="nav-link-neo">Kenapa Kami</a>
+          <a href="#daftar-harga" class="nav-link-neo">Daftar Harga</a>
+          <a href="#galeri" class="nav-link-neo">Galeri</a>
+          <a href="#form-pesanan" class="btn-nav-cta">📱 Pesan Sekarang</a>
+        </div>
+
+        <!-- Tombol menu mobile -->
+        <button
+          class="navbar-toggler-neo d-lg-none"
+          type="button"
+          id="btnMobileMenu"
+          aria-controls="mobileMenuNeo"
+          aria-expanded="false"
+          aria-label="Buka menu"
+        >
+          ☰
+        </button>
+      </div>
+
+      <!-- Menu mobile (dropdown) -->
+      <div id="mobileMenuNeo" class="d-lg-none px-3 pb-3" style="display: none">
+        <a href="#hero" class="nav-link-neo">Beranda</a>
+        <a href="#kenapa-kami" class="nav-link-neo">Kenapa Kami</a>
+        <a href="#daftar-harga" class="nav-link-neo">Daftar Harga</a>
+        <a href="#galeri" class="nav-link-neo">Galeri</a>
+        <a href="#form-pesanan" class="btn-nav-cta d-inline-block"
+          >📱 Pesan Sekarang</a
+        >
+      </div>
+    </nav>
+
+    <!-- ============================================================
+         HEADER / HERO
+         Struktur Bootstrap: container > text-center
+         ============================================================ -->
+    <header id="hero" class="py-5">
+      <div class="container text-center">
+        <div class="hero-badge px-3 py-2 mb-4 d-inline-block fw-bold">
+          🥚 Telur Ayam Kampung
+        </div>
+        <h1 class="display-3 fw-bold mb-3">SHINDO FARM 77</h1>
+        <p class="fs-4 fw-medium mb-3">
+          Telur ayam kampung asli, segar setiap hari
+        </p>
+        <p
+          class="fs-6 fw-medium mb-4"
+          style="max-width: 640px; margin-left: auto; margin-right: auto"
+        >
+          Kami beternak ayam kampung sendiri dengan pakan alami tanpa bahan
+          kimia, sehingga telur yang sampai ke tangan Anda selalu segar,
+          bergizi, dan berkualitas premium. Dipanen setiap hari langsung dari
+          kandang, dikemas rapi, dan dikirim cepat ke rumah Anda.
+        </p>
+        <a
+          href="#form-pesanan"
+          class="btn btn-neo btn-neo-primary btn-lg px-5 py-3"
+          >Pesan Sekarang</a
+        >
+
+        <div class="hero-stats">
+          <div class="hero-stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Ayam Kampung Asli</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="stat-number">Setiap Hari</div>
+            <div class="stat-label">Panen &amp; Kirim Segar</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="stat-number">0 Kimia</div>
+            <div class="stat-label">Pakan 100% Alami</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         KENAPA PILIH KAMI
+         Struktur Bootstrap: container > row > col-md-4 (3 kolom)
+         ============================================================ -->
+    <section id="kenapa-kami" class="py-5">
+      <div class="container text-center">
+        <h2 class="display-5 fw-bold mb-5">Kenapa Pilih Kami?</h2>
+        <div class="row g-4">
+          <!-- Kolom 1 -->
+          <div class="col-md-4">
+            <div class="card-neo p-4 h-100">
+              <div class="fs-1 mb-3">🌿</div>
+              <h3 class="fs-4 fw-bold mb-2">Pakan Alami</h3>
+              <p>
+                Tanpa bahan kimia, ayam kami diberi pakan alami berkualitas
+                tinggi
+              </p>
+            </div>
+          </div>
+          <!-- Kolom 2 -->
+          <div class="col-md-4">
+            <div class="card-neo p-4 h-100">
+              <div class="fs-1 mb-3">🥚</div>
+              <h3 class="fs-4 fw-bold mb-2">Segar Langsung</h3>
+              <p>Segar langsung dari kandang ke tangan Anda setiap hari</p>
+            </div>
+          </div>
+          <!-- Kolom 3 -->
+          <div class="col-md-4">
+            <div class="card-neo p-4 h-100">
+              <div class="fs-1 mb-3">💰</div>
+              <h3 class="fs-4 fw-bold mb-2">Harga Bersahabat</h3>
+              <p>Kualitas premium dengan harga yang tetap terjangkau</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DAFTAR HARGA
+         Struktur Bootstrap:
+         - Baris 1: Per Butir (1 kolom penuh, col-12)
+         - Baris 2: 3 Paket sejajar (row > col-md-4 x3)
+         - Baris 3: Catatan gratis ongkir (col-12)
+         ============================================================ -->
+    <section id="daftar-harga" class="py-5">
+      <div class="container text-center">
+        <h2 class="display-5 fw-bold mb-5">Daftar Harga</h2>
+
+        <!-- BARIS 1: Per Butir -->
+        <div class="row mb-4">
+          <div class="col-12">
+            <div
+              class="per-butir-card d-inline-flex align-items-center px-4 py-3 gap-3"
+            >
+              <span class="fs-5 fw-bold">Per Butir</span>
+              <span class="fs-3 fw-bold text-nowrap">Rp 3.000</span>
+              <span class="text-muted">/butir</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- BARIS 2: 3 Paket sejajar -->
+        <div class="row g-4 mb-4">
+          <!-- Paket Kecil -->
+          <div class="col-md-4">
+            <div class="card-neo p-4 h-100 text-center">
+              <h3 class="fs-5 fw-bold mb-2">Paket Kecil</h3>
+              <div class="fs-2 fw-bold mb-1">Rp 15.000</div>
+              <p class="text-muted mb-3">5 butir telur ayam kampung</p>
+              <a href="#form-pesanan" class="btn btn-neo btn-neo-secondary px-4"
+                >Pilih</a
+              >
+            </div>
+          </div>
+          <!-- Paket Sedang (Paling Laris) -->
+          <div class="col-md-4">
+            <div
+              class="card-neo pricing-card-featured p-4 h-100 text-center position-relative"
+            >
+              <span
+                class="badge-neo badge-laris position-absolute top-0 start-50 translate-middle px-3 py-1"
+                >⭐ Paling Laris</span
+              >
+              <h3 class="fs-5 fw-bold mb-2 mt-2">Paket Sedang</h3>
+              <div class="fs-2 fw-bold mb-1">Rp 28.000</div>
+              <p class="text-muted mb-3">10 butir telur ayam kampung</p>
+              <a href="#form-pesanan" class="btn btn-neo btn-neo-primary px-4"
+                >Pilih</a
+              >
+            </div>
+          </div>
+          <!-- Paket Besar (Paling Hemat) -->
+          <div class="col-md-4">
+            <div class="card-neo p-4 h-100 text-center position-relative">
+              <span
+                class="badge-neo badge-hemat position-absolute top-0 start-50 translate-middle px-3 py-1"
+                >💎 Paling Hemat</span
+              >
+              <h3 class="fs-5 fw-bold mb-2 mt-2">Paket Besar</h3>
+              <div class="fs-2 fw-bold mb-1">Rp 40.000</div>
+              <p class="text-muted mb-3">15 butir telur ayam kampung</p>
+              <a href="#form-pesanan" class="btn btn-neo btn-neo-secondary px-4"
+                >Pilih</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- BARIS 3: Gratis Ongkir -->
+        <div class="row">
+          <div class="col-12">
+            <div class="ongkir-note d-inline-block px-4 py-3 fw-bold fs-6">
+              🚚 Gratis ongkir jika jarak ≤ 500 Meter dari lokasi peternakan
+              kami
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FOTO / GALERI
+         Struktur Bootstrap: container > row > col-md-6 (2 kolom)
+         GANTI src di bawah ini dengan link foto Anda
+         ============================================================ -->
+    <section id="galeri" class="py-5">
+      <div class="container text-center">
+        <h2 class="display-5 fw-bold mb-5">Foto / Galeri</h2>
+        <div class="row g-4 justify-content-center">
+          <!-- Foto Telur -->
+          <div class="col-md-6">
+            <div class="card-neo overflow-hidden">
+              <img
+                src="Foto2.png"
+                alt="Foto Telur Ayam Kampung"
+                class="gallery-img"
+              />
+            </div>
+          </div>
+          <!-- Foto Kandang -->
+          <div class="col-md-6">
+            <div class="card-neo overflow-hidden">
+              <img src="Foto1.jpg" alt="Foto Kandang" class="gallery-img" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FORM PESANAN
+         Struktur Bootstrap: container > row > col-md-8 offset-md-2
+         (Field Nomor WhatsApp sudah dihapus sesuai permintaan)
+         ============================================================ -->
+    <section id="form-pesanan" class="py-5">
+      <div class="container text-center">
+        <h2 class="display-5 fw-bold mb-5">Form Pesanan</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-7 col-lg-6">
+            <form id="orderForm" class="text-start">
+              <!-- Nama Pemesan -->
+              <div class="mb-3">
+                <label for="nama" class="form-label fw-bold"
+                  >Nama Pemesan <span class="text-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control form-control-neo py-3"
+                  id="nama"
+                  name="nama"
+                  placeholder="Masukkan nama lengkap"
+                  required
+                />
+              </div>
+              <!-- Pilihan Paket -->
+              <div class="mb-3">
+                <label for="paket" class="form-label fw-bold"
+                  >Pilihan Paket <span class="text-danger">*</span></label
+                >
+                <select
+                  class="form-select form-control-neo py-3"
+                  id="paket"
+                  name="paket"
+                  required
+                >
+                  <option value="">-- Pilih Paket --</option>
+                  <option value="Per Butir (Rp 3.000/butir)">
+                    Per Butir (Rp 3.000/butir)
+                  </option>
+                  <option value="Paket Kecil - 5 butir (Rp 15.000)">
+                    Paket Kecil - 5 butir (Rp 15.000)
+                  </option>
+                  <option value="Paket Sedang - 10 butir (Rp 28.000)">
+                    Paket Sedang - 10 butir (Rp 28.000)
+                  </option>
+                  <option value="Paket Besar - 15 butir (Rp 40.000)">
+                    Paket Besar - 15 butir (Rp 40.000)
+                  </option>
+                </select>
+              </div>
+              <!-- Jumlah -->
+              <div class="mb-3">
+                <label for="jumlah" class="form-label fw-bold"
+                  >Jumlah <span class="text-danger">*</span></label
+                >
+                <input
+                  type="number"
+                  class="form-control form-control-neo py-3"
+                  id="jumlah"
+                  name="jumlah"
+                  min="1"
+                  value="1"
+                  placeholder="Jumlah pesanan"
+                  required
+                />
+              </div>
+              <!-- Alamat Pengiriman -->
+              <div class="mb-3">
+                <label for="alamat" class="form-label fw-bold"
+                  >Alamat Pengiriman <span class="text-danger">*</span></label
+                >
+                <textarea
+                  class="form-control form-control-neo py-3"
+                  id="alamat"
+                  name="alamat"
+                  rows="3"
+                  placeholder="Masukkan alamat lengkap pengiriman"
+                  required
+                ></textarea>
+              </div>
+              <!-- Bagikan Lokasi (Opsional) -->
+              <div class="mb-3">
+                <label class="form-label fw-bold"
+                  >Bagikan Lokasi
+                  <span class="text-muted fw-normal"
+                    >(opsional, klik untuk isi otomatis ke Alamat Pengiriman di
+                    atas)</span
+                  ></label
+                >
+                <div>
+                  <button
+                    type="button"
+                    id="btnLokasi"
+                    class="btn btn-neo btn-neo-secondary w-100 py-2"
+                  >
+                    📍 Bagikan Lokasi Saya
+                  </button>
+                  <div id="lokasiStatus" class="small mt-2"></div>
+                </div>
+              </div>
+
+              <!-- Catatan Tambahan (Opsional) -->
+              <div class="mb-3">
+                <label for="catatan" class="form-label fw-bold"
+                  >Catatan Tambahan
+                  <span class="text-muted fw-normal">(opsional)</span></label
+                >
+                <textarea
+                  class="form-control form-control-neo py-3"
+                  id="catatan"
+                  name="catatan"
+                  rows="2"
+                  placeholder="Contoh: waktu pengiriman, permintaan khusus, dll (boleh dikosongkan)"
+                ></textarea>
+              </div>
+              <!-- Tombol Submit -->
+              <button
+                type="submit"
+                class="btn btn-neo btn-neo-primary btn-lg w-100 py-3 mt-2 fs-5"
+              >
+                📱 Pesan via WhatsApp
+              </button>
+            </form>
+
+            <!-- Catatan di bawah form -->
+            <div class="catatan-box p-3 mt-4 text-start">
+              <p class="fw-bold mb-1">📌 Catatan:</p>
+              <p class="mb-0">
+                Setelah menekan tombol "Pesan via WhatsApp", pesan pesanan Anda
+                akan otomatis tersusun dan Anda akan diarahkan untuk
+                mengirimkannya langsung ke WhatsApp kami. Mohon pastikan data
+                yang diisi sudah benar sebelum mengirim.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         Struktur Bootstrap: container > row > col-md-6 (2 kolom)
+         ============================================================ -->
+    <footer id="footer" class="py-5 text-white">
+      <div class="container">
+        <div class="row g-4 mb-4">
+          <!-- Brand -->
+          <div class="col-md-6">
+            <h3 class="fs-4 fw-bold mb-2">🥚 SHINDO FARM 77</h3>
+            <p class="text-white-50">
+              Telur ayam kampung asli, segar setiap hari
+            </p>
+          </div>
+          <!-- Info Kontak -->
+          <div class="col-md-6">
+            <p class="mb-2"><strong>Telepon:</strong> +62 821-3757-9707</p>
+            <p class="mb-0">
+              <strong>Alamat:</strong> Jl. Sonopakis Kidul, Sonopakis Kidul,
+              Ngestiharjo, Kec. Kasihan, Kabupaten Bantul, Daerah Istimewa
+              Yogyakarta 55184
+            </p>
+          </div>
+        </div>
+        <hr class="border-secondary" />
+        <p class="text-center text-white-50 small mb-0">
+          &copy; 2024 SHINDO FARM 77. Semua hak dilindungi.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle (optional, untuk komponen interaktif) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // ============================================================
+      // FORM PESANAN - WHATSAPP HANDLER
+      // (Nomor WhatsApp pemesan sudah dihapus dari form, jadi tidak
+      //  lagi diambil/divalidasi/ditampilkan di pesan WhatsApp)
+      // ============================================================
+      document.addEventListener("DOMContentLoaded", function () {
+        var form = document.getElementById("orderForm");
+        var lokasiLink = ""; // menyimpan link Google Maps jika user membagikan lokasi
+        var NOMOR_WA_TOKO = "6282137579707"; // nomor WhatsApp tujuan (format internasional tanpa +)
+
+        // ============================================================
+        // NAVBAR: toggle menu mobile
+        // ============================================================
+        var btnMobileMenu = document.getElementById("btnMobileMenu");
+        var mobileMenuNeo = document.getElementById("mobileMenuNeo");
+
+        if (btnMobileMenu && mobileMenuNeo) {
+          btnMobileMenu.addEventListener("click", function () {
+            var isOpen = mobileMenuNeo.style.display === "block";
+            mobileMenuNeo.style.display = isOpen ? "none" : "block";
+            btnMobileMenu.setAttribute("aria-expanded", String(!isOpen));
+          });
+
+          // Tutup menu mobile otomatis saat salah satu link diklik
+          var mobileLinks = mobileMenuNeo.querySelectorAll("a");
+          for (var m = 0; m < mobileLinks.length; m++) {
+            mobileLinks[m].addEventListener("click", function () {
+              mobileMenuNeo.style.display = "none";
+              btnMobileMenu.setAttribute("aria-expanded", "false");
+            });
+          }
+        }
+
+        // ============================================================
+        // TOMBOL BAGIKAN LOKASI (GPS)
+        // ============================================================
+        var btnLokasi = document.getElementById("btnLokasi");
+        var lokasiStatus = document.getElementById("lokasiStatus");
+
+        if (btnLokasi) {
+          btnLokasi.addEventListener("click", function () {
+            if (!navigator.geolocation) {
+              lokasiStatus.textContent =
+                "Maaf, browser Anda tidak mendukung fitur ini.";
+              lokasiStatus.className = "small mt-2 text-danger";
+              return;
+            }
+
+            lokasiStatus.textContent = "Mengambil lokasi...";
+            lokasiStatus.className = "small mt-2 text-muted";
+
+            navigator.geolocation.getCurrentPosition(
+              function (position) {
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
+                lokasiLink = "https://maps.google.com/?q=" + lat + "," + lng;
+
+                // Otomatis isi ke field alamat (menggantikan isi lama)
+                document.getElementById("alamat").value = lokasiLink;
+
+                lokasiStatus.textContent =
+                  "✅ Lokasi berhasil dibagikan ke alamat!";
+                lokasiStatus.className = "small mt-2 text-success fw-bold";
+              },
+              function (error) {
+                lokasiLink = "";
+                lokasiStatus.textContent =
+                  "Gagal mengambil lokasi. Pastikan izin GPS diaktifkan, atau isi alamat manual di atas.";
+                lokasiStatus.className = "small mt-2 text-danger";
+              },
+            );
+          });
+        }
+
+        if (form) {
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Ambil data dari form
+            var nama = document.getElementById("nama").value.trim();
+            var paket = document.getElementById("paket").value;
+            var jumlah = document.getElementById("jumlah").value;
+            var alamat = document.getElementById("alamat").value.trim();
+            var catatan = document.getElementById("catatan").value.trim();
+
+            // Validasi sederhana (catatan tidak wajib diisi)
+            if (!nama || !paket || !jumlah || !alamat) {
+              alert("Mohon lengkapi semua field yang wajib diisi.");
+              return;
+            }
+
+            // Generate pesan WhatsApp
+            var pesan =
+              "Halo SHINDO FARM 77! \n\n" +
+              "Saya ingin memesan telur ayam kampung:\n\n" +
+              "*Detail Pesanan:*\n" +
+              "• Nama: " +
+              nama +
+              "\n" +
+              "• Paket: " +
+              paket +
+              "\n" +
+              "• Jumlah: " +
+              jumlah +
+              "\n" +
+              "• Alamat: " +
+              alamat +
+              (catatan ? "\n• Catatan: " + catatan : "") +
+              "\n\n" +
+              "Mohon konfirmasi ketersediaan dan total harganya. Terima kasih!";
+
+            // Encode pesan untuk URL
+            var encodedPesan = encodeURIComponent(pesan);
+
+            // Buka WhatsApp di tab baru
+            var waUrl =
+              "https://wa.me/" + NOMOR_WA_TOKO + "?text=" + encodedPesan;
+            window.open(waUrl, "_blank");
+          });
+        }
+
+        // Smooth scroll untuk link internal
+        // (scroll-margin-top di CSS sudah menangani offset navbar fixed)
+        var anchors = document.querySelectorAll('a[href^="#"]');
+        for (var i = 0; i < anchors.length; i++) {
+          anchors[i].addEventListener("click", function (e) {
+            var targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+
+            var target = document.querySelector(targetId);
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
