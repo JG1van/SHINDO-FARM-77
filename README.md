@@ -1,6 +1,6 @@
 # 🥚 SHINDO FARM 77
 
-Website landing page untuk usaha telur ayam kampung **SHINDO FARM 77**. Dibangun sebagai website statis (HTML, CSS, JS) dengan gaya desain **Neobrutalism**, tanpa backend — cocok untuk hosting gratis di GitHub Pages.
+Website landing page untuk usaha telur ayam kampung **SHINDO FARM 77**. Dibangun sebagai website statis (HTML, CSS, JS) dengan gaya desain **Neobrutalism**, tanpa backend.
 
 🔗 **Live site:** [shindo-farm-77.my.id](https://shindo-farm-77.my.id)
 
@@ -13,7 +13,6 @@ Website landing page untuk usaha telur ayam kampung **SHINDO FARM 77**. Dibangun
 - Form pesanan yang otomatis menyusun pesan dan membuka WhatsApp
 - Tombol bagikan lokasi (GPS) untuk mengisi alamat otomatis
 - Desain responsif, mobile-friendly
-- Tanpa backend/database — semua proses di sisi browser
 
 ## 🛠️ Teknologi
 
@@ -33,14 +32,6 @@ Website landing page untuk usaha telur ayam kampung **SHINDO FARM 77**. Dibangun
 ├── FotoKandang2.png     # Foto kandang/peternakan
 └── README.md            # Dokumentasi ini
 ```
-
-## 🚀 Cara Deploy (GitHub Pages)
-
-1. Upload semua file (`index.html` + foto-foto) ke repo ini
-2. Masuk ke **Settings → Pages**
-3. Pilih branch `main` dan folder `/root`
-4. (Opsional) Isi **Custom domain** jika punya domain sendiri
-5. Tunggu beberapa menit, website otomatis aktif
 
 ---
 
