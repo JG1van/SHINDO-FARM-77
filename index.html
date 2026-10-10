@@ -25,14 +25,14 @@
     <style>
       /* ===== CUSTOM NEOBRUTALISM DI ATAS BOOTSTRAP ===== */
       :root {
-        --color-primary: #ffc93c; /* kuning telur cerah - lebih ke arah yolk oranye-kuning */
-        --color-secondary: #e8871e; /* oranye cangkang telur ayam kampung (coklat-oranye) */
-        --color-accent: #fff4d6; /* krem cangkang muda - dipakai sbg aksen terang, ganti hijau */
-        --color-bg: #fffbeb; /* tetap, sudah pas */
+        --color-primary: #ffc93c;
+        --color-secondary: #e8871e;
+        --color-accent: #fff4d6;
+        --color-bg: #fffbeb;
         --color-card: #ffffff;
-        --color-dark: #1a1a1a; /* tetap hitam, jangan diganti */
+        --color-dark: #1a1a1a;
         --color-border: #1a1a1a;
-        --color-featured: #ffe9b8; /* krem-kuning untuk paket unggulan */
+        --color-featured: #ffe9b8;
         --color-badge-laris: #e8871e;
         --color-badge-hemat: #ffc93c;
         --border-width: 3px;
@@ -359,7 +359,6 @@
   <body>
     <!-- ============================================================
          NAVBAR
-         Fixed di atas, sesuai tema neobrutalism (border tebal + shadow)
          ============================================================ -->
     <nav id="navbar-neo">
       <div
@@ -411,7 +410,6 @@
 
     <!-- ============================================================
          HEADER / HERO
-         Struktur Bootstrap: container > text-center
          ============================================================ -->
     <header id="hero" class="py-5">
       <div class="container text-center">
@@ -465,7 +463,6 @@
 
     <!-- ============================================================
          KENAPA PILIH KAMI
-         Struktur Bootstrap: container > row > col-md-4 (3 kolom)
          ============================================================ -->
     <section id="kenapa-kami" class="py-5">
       <div class="container text-center">
@@ -503,10 +500,8 @@
 
     <!-- ============================================================
          DAFTAR HARGA
-         Struktur Bootstrap:
-         - Baris 1: Per Butir (1 kolom penuh, col-12)
-         - Baris 2: 3 Paket sejajar (row > col-md-4 x3)
-         - Baris 3: Catatan gratis ongkir (col-12)
+         Per Butir Rp 3.000 | Kecil (5) Rp 15.000 | Sedang (10) Rp 25.000
+         | Besar (15) Rp 30.000
          ============================================================ -->
     <section id="daftar-harga" class="py-5">
       <div class="container text-center">
@@ -519,7 +514,7 @@
               class="per-butir-card d-inline-flex align-items-center px-4 py-3 gap-3"
             >
               <span class="fs-5 fw-bold">Per Butir</span>
-              <span class="fs-3 fw-bold text-nowrap">Rp 2.500</span>
+              <span class="fs-3 fw-bold text-nowrap">Rp 3.000</span>
               <span class="text-muted">/butir</span>
             </div>
           </div>
@@ -531,7 +526,7 @@
           <div class="col-md-4">
             <div class="card-neo p-4 h-100 text-center">
               <h3 class="fs-5 fw-bold mb-2">Paket Kecil</h3>
-              <div class="fs-2 fw-bold mb-1">Rp 11.000</div>
+              <div class="fs-2 fw-bold mb-1">Rp 15.000</div>
               <p class="text-muted mb-3">5 butir telur ayam kampung</p>
               <a href="#form-pesanan" class="btn btn-neo btn-neo-secondary px-4"
                 >Pilih</a
@@ -548,8 +543,10 @@
                 >⭐ Paling Laris</span
               >
               <h3 class="fs-5 fw-bold mb-2 mt-2">Paket Sedang</h3>
-              <div class="fs-2 fw-bold mb-1">Rp 21.000</div>
-              <p class="text-muted mb-3">10 butir telur ayam kampung</p>
+              <div class="fs-2 fw-bold mb-1">Rp 25.000</div>
+              <p class="text-muted mb-3">
+                10 butir telur ayam kampung<br /><small>(Rp 2.500/butir)</small>
+              </p>
               <a href="#form-pesanan" class="btn btn-neo btn-neo-primary px-4"
                 >Pilih</a
               >
@@ -564,9 +561,37 @@
               >
               <h3 class="fs-5 fw-bold mb-2 mt-2">Paket Besar</h3>
               <div class="fs-2 fw-bold mb-1">Rp 30.000</div>
-              <p class="text-muted mb-3">15 butir telur ayam kampung</p>
+              <p class="text-muted mb-3">
+                15 butir telur ayam kampung<br /><small>(Rp 2.000/butir)</small>
+              </p>
               <a href="#form-pesanan" class="btn btn-neo btn-neo-secondary px-4"
                 >Pilih</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- BARIS 3: Harga Khusus Partai -->
+        <div class="row mb-4">
+          <div class="col-12">
+            <div
+              class="card-neo p-4 text-center"
+              style="background-color: var(--color-primary)"
+            >
+              <h3 class="fs-4 fw-bold mb-2">🚚 Beli Partai / Grosir</h3>
+              <p class="fs-5 fw-bold mb-1">
+                Pembelian lebih dari 100 butir = Harga Khusus
+              </p>
+              <p class="mb-3">
+                Cocok untuk warung, toko, katering, dan reseller. Hubungi kami
+                untuk penawaran terbaik.
+              </p>
+              <a
+                href="https://wa.me/6287839210796?text=Halo%20SHINDO%20FARM%2077%2C%20saya%20ingin%20tanya%20harga%20khusus%20pembelian%20lebih%20dari%20100%20butir."
+                target="_blank"
+                rel="noopener"
+                class="btn btn-neo btn-neo-secondary px-4 py-2"
+                >💬 Tanya Harga Khusus</a
               >
             </div>
           </div>
@@ -586,8 +611,6 @@
 
     <!-- ============================================================
          FOTO / GALERI
-         Struktur Bootstrap: container > row > col-md-6 (2 kolom)
-         GANTI src di bawah ini dengan link foto Anda
          ============================================================ -->
     <section id="galeri" class="py-5">
       <div class="container text-center">
@@ -638,8 +661,6 @@
 
     <!-- ============================================================
          FORM PESANAN
-         Struktur Bootstrap: container > row > col-md-8 offset-md-2
-         (Field Nomor WhatsApp sudah dihapus sesuai permintaan)
          ============================================================ -->
     <section id="form-pesanan" class="py-5">
       <div class="container text-center">
@@ -673,17 +694,22 @@
                   required
                 >
                   <option value="">-- Pilih Paket --</option>
-                  <option value="Per Butir (Rp 2.500/butir)">
-                    Per Butir (Rp 2.500/butir)
+                  <option value="Per Butir (Rp 3.000/butir)">
+                    Per Butir (Rp 3.000/butir)
                   </option>
-                  <option value="Paket Kecil - 5 butir (Rp 11.000)">
-                    Paket Kecil - 5 butir (Rp 11.000)
+                  <option value="Paket Kecil - 5 butir (Rp 15.000)">
+                    Paket Kecil - 5 butir (Rp 15.000)
                   </option>
-                  <option value="Paket Sedang - 10 butir (Rp 21.000)">
-                    Paket Sedang - 10 butir (Rp 21.000)
+                  <option value="Paket Sedang - 10 butir (Rp 25.000)">
+                    Paket Sedang - 10 butir (Rp 25.000)
                   </option>
                   <option value="Paket Besar - 15 butir (Rp 30.000)">
                     Paket Besar - 15 butir (Rp 30.000)
+                  </option>
+                  <option
+                    value="Partai/Grosir - lebih dari 100 butir (Harga Khusus)"
+                  >
+                    Partai/Grosir - lebih dari 100 butir (Harga Khusus)
                   </option>
                 </select>
               </div>
@@ -778,7 +804,6 @@
 
     <!-- ============================================================
          FOOTER
-         Struktur Bootstrap: container > row > col-md-6 (2 kolom)
          ============================================================ -->
     <footer id="footer" class="py-5 text-white">
       <div class="container">
@@ -814,19 +839,17 @@
       </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle (optional, untuk komponen interaktif) -->
+    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
       // ============================================================
       // FORM PESANAN - WHATSAPP HANDLER
-      // (Nomor WhatsApp pemesan sudah dihapus dari form, jadi tidak
-      //  lagi diambil/divalidasi/ditampilkan di pesan WhatsApp)
       // ============================================================
       document.addEventListener("DOMContentLoaded", function () {
         var form = document.getElementById("orderForm");
-        var lokasiLink = ""; // menyimpan link Google Maps jika user membagikan lokasi
-        var NOMOR_WA_TOKO = "6287839210796"; // nomor WhatsApp tujuan (format internasional tanpa +)
+        var lokasiLink = "";
+        var NOMOR_WA_TOKO = "6287839210796"; // format internasional tanpa +
 
         // ============================================================
         // NAVBAR: toggle menu mobile
@@ -841,7 +864,6 @@
             btnMobileMenu.setAttribute("aria-expanded", String(!isOpen));
           });
 
-          // Tutup menu mobile otomatis saat salah satu link diklik
           var mobileLinks = mobileMenuNeo.querySelectorAll("a");
           for (var m = 0; m < mobileLinks.length; m++) {
             mobileLinks[m].addEventListener("click", function () {
@@ -875,7 +897,6 @@
                 var lng = position.coords.longitude;
                 lokasiLink = "https://maps.google.com/?q=" + lat + "," + lng;
 
-                // Otomatis isi ke field alamat (menggantikan isi lama)
                 document.getElementById("alamat").value = lokasiLink;
 
                 lokasiStatus.textContent =
@@ -896,20 +917,17 @@
           form.addEventListener("submit", function (e) {
             e.preventDefault();
 
-            // Ambil data dari form
             var nama = document.getElementById("nama").value.trim();
             var paket = document.getElementById("paket").value;
             var jumlah = document.getElementById("jumlah").value;
             var alamat = document.getElementById("alamat").value.trim();
             var catatan = document.getElementById("catatan").value.trim();
 
-            // Validasi sederhana (catatan tidak wajib diisi)
             if (!nama || !paket || !jumlah || !alamat) {
               alert("Mohon lengkapi semua field yang wajib diisi.");
               return;
             }
 
-            // Generate pesan WhatsApp
             var pesan =
               "Halo SHINDO FARM 77! \n\n" +
               "Saya ingin memesan telur ayam kampung:\n\n" +
@@ -929,10 +947,7 @@
               "\n\n" +
               "Mohon konfirmasi ketersediaan dan total harganya. Terima kasih!";
 
-            // Encode pesan untuk URL
             var encodedPesan = encodeURIComponent(pesan);
-
-            // Buka WhatsApp di tab baru
             var waUrl =
               "https://wa.me/" + NOMOR_WA_TOKO + "?text=" + encodedPesan;
             window.open(waUrl, "_blank");
@@ -940,7 +955,6 @@
         }
 
         // Smooth scroll untuk link internal
-        // (scroll-margin-top di CSS sudah menangani offset navbar fixed)
         var anchors = document.querySelectorAll('a[href^="#"]');
         for (var i = 0; i < anchors.length; i++) {
           anchors[i].addEventListener("click", function (e) {
